@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
+
 {% block  content %}
-  <a href="/new">beans</a>
   <ul>
     {% for row in rows %}
         <li>
@@ -8,4 +8,5 @@
         </li>
     {% endfor %}
 </ul>
+<a href="/new">beans</a>
 {% endblock %}

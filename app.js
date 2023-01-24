@@ -1,12 +1,20 @@
 require('dotenv').config();
+
 const express = require('express');
+
 const nunjucks = require('nunjucks');
-const app = express();
-const port = 3000;
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
 
 const indexRouter = require('./routes/index');
+
+const app = express();
+const port = 3000;
+
+
+const bodyParser = require('body-parser');
+
+app.use(express.static('public'))
+
+
 
 nunjucks.configure('views', {
     autoescape: true,
@@ -14,6 +22,7 @@ nunjucks.configure('views', {
 });
 
 app.use('/', indexRouter);
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
