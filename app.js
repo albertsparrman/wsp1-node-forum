@@ -14,6 +14,7 @@ const bodyParser = require('body-parser');
 
 app.use(express.static('public'))
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 nunjucks.configure('views', {
@@ -22,7 +23,6 @@ nunjucks.configure('views', {
 });
 
 app.use('/', indexRouter);
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

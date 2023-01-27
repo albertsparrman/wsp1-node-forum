@@ -9,6 +9,7 @@ const pool = mysql.createPool({
 });
 const promisePool = pool.promise();
 
+
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT * FROM as30forum");
    
@@ -29,5 +30,19 @@ router.get('/new', async function (req, res, next) {
         title: 'Nytt inlägg',
     });
 });
+
+
+// Skapa en ny författare om den inte finns men du behöver kontrollera om användare finns!
+let [user] = await promisePool.query('SELECT * FROM as30users WHERE id = ?', [authorId]);
+if (!user) {
+    user = await promisePool.query('INSERT INTO as30users (name) VALUES (?)', [authorName]);
+}
+
+// user.insertId bör innehålla det nya ID:t för författaren
+const userId = user.insertId || user[0].id;
+
+// kör frågan för att skapa ett nytt inlägg
+const [rows] = await promisePool.query('INSERT INTO as30forum (authorId, title, content) VALUES (?, ?, ?)', [userId, title, content]);
+
 
 module.exports = router;
