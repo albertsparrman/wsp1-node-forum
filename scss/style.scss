@@ -60,3 +60,18 @@ a:hover{
     }
 }
 
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sak {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.beans {
+    background-color: rgb(35, 36, 36);
+    margin: 4px 0;
+}

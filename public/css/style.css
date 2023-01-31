@@ -1,6 +1,6 @@
 html {
-  background-color: rgb(251, 251, 251);
-  color: rgb(44, 44, 47);
+  background-color: rgb(28, 28, 28);
+  color: rgb(225, 225, 225);
   font-family: "Roboto", sans-serif;
 }
 
@@ -69,6 +69,21 @@ a:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sak {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.beans {
+  background-color: rgb(35, 36, 36);
+  margin: 4px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

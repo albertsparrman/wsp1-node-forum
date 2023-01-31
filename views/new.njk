@@ -3,7 +3,11 @@
 {% block  content %}
     <form action="/new" method="post">
         <label for="author">Författare</label>
-        <input type="text" name="author" id="author">
+        <select name="author" id="author">
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.name }}</option>
+            {% endfor %}
+        </select>
         <label for="title">Titel</label>
         <input type="text" name="title" id="title">
         <label for="content">Innehåll</label>

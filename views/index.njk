@@ -1,12 +1,23 @@
 {% extends "layout.njk" %}
 
 {% block  content %}
-  <ul>
+<h1>nord-väster-sjö-kust-artilleri-flyg-spanings-simulator-anläggnings-materiel-underhålls-uppföljnings-system-diskussions-inläggs-förberedelse-arbeten</h1>
+<div class="sak">
     {% for row in rows %}
-        <li>
-            {{ row | dump }}
-        </li>
+        <div class="beans">
+            <div class="top">
+                <h2>
+                    {{ row.title }}
+                </h2>
+                <p class="username">
+                    @{{ row.name }}
+                </p>
+            </div>
+            <p>
+                {{ row.content }}
+            </p>
+        </div>
     {% endfor %}
-</ul>
+</div>
 <a href="/new">beans</a>
 {% endblock %}
