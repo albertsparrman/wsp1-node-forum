@@ -45,3 +45,6 @@ WHERE comments-tabellen.postId = 1;
 Du behöver skapa en ny route för enskilda poster som hämtar kommentarer för den posten.
 
 Du behöver skapa ett nytt formulär och route för att kunna skapa en ny kommentar till en post.
+
+
+[Del 10](part-10.md)
