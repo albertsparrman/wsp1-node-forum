@@ -12,6 +12,7 @@ const pool = mysql.createPool({
 });
 const promisePool = pool.promise();
 
+
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT as30forum.*, as30users.name FROM as30forum JOIN as30users ON as30forum.authorId = as30users.id");
    
